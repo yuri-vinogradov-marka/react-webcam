@@ -10,9 +10,9 @@
   ],
   "scripts": {
     "prepublish": "npm run build:production",
-    "build": "NODE_ENV=development webpack-cli",
-    "build:production": "npm run build && NODE_ENV=production webpack-cli",
-	  "prepare": "npm run build:production",
+    "build": "cross-env NODE_ENV=development webpack-cli",
+    "build:production": "npm run build && cross-env NODE_ENV=production webpack-cli",
+    "prepare": "npm run build:production",
     "lint": "eslint src/react-webcam.tsx",
     "test": "tsc && jest"
   },
@@ -43,6 +43,7 @@
     "@typescript-eslint/eslint-plugin": "^2.1.0",
     "@typescript-eslint/parser": "^2.1.0",
     "awesome-typescript-loader": "^5.2.1",
+    "cross-env": "^7.0.3",
     "eslint": "^6.3.0",
     "eslint-plugin-react": "^7.14.3",
     "jest": "^27.0.6",
